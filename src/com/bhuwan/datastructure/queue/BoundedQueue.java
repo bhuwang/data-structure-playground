@@ -52,20 +52,20 @@ public class BoundedQueue implements Queue {
         queue.enqueue("Bhuwan");
         queue.enqueue("Prisha");
         queue.enqueue("Pratiksha");
-        System.out.println("Size: " + queue.size);
+        System.out.println("Size: " + queue.size());
         System.out.println("Peek: " + queue.peek());
         System.out.println("Dequeue: " + queue.dequeue());
         System.out.println("=============================");
-        System.out.println("Size: " + queue.size);
+        System.out.println("Size: " + queue.size());
         System.out.println("Peek: " + queue.peek());
         System.out.println("=============================");
         System.out.println("Dequeue: " + queue.dequeue());
-        System.out.println("Size: " + queue.size);
+        System.out.println("Size: " + queue.size());
         System.out.println("Peek: " + queue.peek());
         System.out.println("=============================");
         queue.enqueue("HomNath");
         queue.enqueue("TejKumari");
-        System.out.println("Size: " + queue.size);
+        System.out.println("Size: " + queue.size());
         System.out.println("Peek: " + queue.peek());
         System.out.println("queue :=");
         for (Object item : queue.queue) {
@@ -73,7 +73,7 @@ public class BoundedQueue implements Queue {
         }
         System.out.println("=============================");
         System.out.println("Dequeue: " + queue.dequeue());
-        System.out.println("Size: " + queue.size);
+        System.out.println("Size: " + queue.size());
         System.out.println("Peek: " + queue.peek());
     }
 

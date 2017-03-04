@@ -90,4 +90,21 @@ public class SinglyLinkedListQueue implements Queue {
         return head == null;
     }
 
+    public static void main(String[] args) {
+        SinglyLinkedListQueue queue = new SinglyLinkedListQueue();
+        queue.enqueue("Bhuwan");
+        queue.enqueue("Prisha");
+        queue.enqueue("Pratiksha");
+        System.out.println("Size: " + queue.size());
+        System.out.println("Peek: " + queue.peek());
+        System.out.println("Dequeue: " + queue.dequeue());
+        System.out.println("=============================");
+        System.out.println("Size: " + queue.size());
+        System.out.println("Peek: " + queue.peek());
+        System.out.println("=============================");
+        System.out.println("Dequeue: " + queue.dequeue());
+        System.out.println("Size: " + queue.size());
+        System.out.println("Peek: " + queue.peek());
+    }
+
 }
