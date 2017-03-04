@@ -16,11 +16,11 @@ package com.bhuwan.datastructure.stack;
  */
 public class BoundedArrayImpl implements Stack {
 
-    private Object[] array;
+    private Object[] stack;
     private int size = 0;
 
     public BoundedArrayImpl(int capacity) {
-        array = new Object[capacity];
+        stack = new Object[capacity];
     }
 
     /*
@@ -30,10 +30,10 @@ public class BoundedArrayImpl implements Stack {
      */
     @Override
     public void push(Object item) {
-        if (size == array.length) {
+        if (size == stack.length) {
             throw new IllegalStateException("Cannot add to full stack");
         }
-        array[size++] = item;
+        stack[size++] = item;
     }
 
     /*
@@ -46,8 +46,8 @@ public class BoundedArrayImpl implements Stack {
         if (size == 0) {
             throw new IllegalStateException("Cannot pop from empty stack");
         }
-        Object popped = array[size - 1];
-        array[--size] = null;
+        Object popped = stack[size - 1];
+        stack[--size] = null;
         return popped;
     }
 
@@ -61,7 +61,7 @@ public class BoundedArrayImpl implements Stack {
         if (size == 0) {
             throw new IllegalStateException("Cannot peek from empty stack");
         }
-        return array[size - 1];
+        return stack[size - 1];
     }
 
     /*

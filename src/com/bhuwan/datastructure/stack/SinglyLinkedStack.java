@@ -12,6 +12,15 @@ import java.util.NoSuchElementException;
  */
 public class SinglyLinkedStack implements Stack {
 
+    public static void main(String[] args) {
+        SinglyLinkedStack stack = new SinglyLinkedStack();
+        stack.push("Bhuwan");
+        stack.push("Pratiksha");
+        stack.push("Prisha");
+        stack.push("new mem");
+        stack.pop();
+    }
+
     private class Node {
         public Object data;
         public Node next;
