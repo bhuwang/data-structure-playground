@@ -3,6 +3,7 @@
  */
 package com.bhuwan.datastructure.stack;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -10,7 +11,7 @@ import java.util.NoSuchElementException;
  *
  *         An implementation of the stack interface using singly-linked nodes.
  */
-public class SinglyLinkedStack<T> implements Stack<T> {
+public class SinglyLinkedStack<T> implements Stack<T>, Iterable<T> {
 
     public static void main(String[] args) {
         SinglyLinkedStack<String> stack = new SinglyLinkedStack<>();
@@ -18,7 +19,9 @@ public class SinglyLinkedStack<T> implements Stack<T> {
         stack.push("Pratiksha");
         stack.push("Prisha");
         stack.push("new mem");
-        stack.pop();
+        for (String item : stack) {
+            System.out.println(item);
+        }
     }
 
     private class Node {
@@ -90,6 +93,42 @@ public class SinglyLinkedStack<T> implements Stack<T> {
     @Override
     public boolean isEmpty() {
         return top == null;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new StackIterator();
+    }
+
+    private class StackIterator implements Iterator<T> {
+
+        private Node current = top;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T item = current.data;
+            current = current.next;
+            return item;
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        for (T item : this) {
+            string.append(item);
+            string.append(" ");
+        }
+        return string.toString();
     }
 
 }
