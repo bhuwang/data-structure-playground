@@ -65,6 +65,11 @@ public class BagLinkedListImpl<T> implements Bag<T>, Iterable<T> {
             current = current.next;
             return item;
         }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
     }
 
     public static void main(String[] args) {
