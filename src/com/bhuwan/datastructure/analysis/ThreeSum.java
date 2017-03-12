@@ -31,9 +31,16 @@ public class ThreeSum {
     /**
      * @param args
      * @throws IOException
+     * @throws InterruptedException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         // int[] intArray = { 30, -40, -10, -20, 40, 0, 10, 5 };
+        // sleep for 5 sec
+        // TimeUnit.SECONDS.sleep(5);
+        // sleep for 5 min
+        // TimeUnit.MINUTES.sleep(5);
+        // sleep for 5 hrs
+        // TimeUnit.HOURS.sleep(5);
         System.out.println("Running 1K ints .............");
         int[] oneKArray = FileUtils.readAllInts(Paths.get("src/com/bhuwan/datastructure/analysis/1Kints.txt"));
 

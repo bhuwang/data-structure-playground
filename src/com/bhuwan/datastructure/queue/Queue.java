@@ -7,13 +7,13 @@ package com.bhuwan.datastructure.queue;
  * @author bhuwan
  *
  */
-public interface Queue {
+public interface Queue<T> {
 
-    void enqueue(Object item);
+    void enqueue(T item);
 
-    Object dequeue();
+    T dequeue();
 
-    Object peek();
+    T peek();
 
     int size();
 

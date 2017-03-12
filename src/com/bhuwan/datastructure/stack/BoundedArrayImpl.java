@@ -3,6 +3,9 @@
  */
 package com.bhuwan.datastructure.stack;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * @author bhuwan
  * 
@@ -14,13 +17,13 @@ package com.bhuwan.datastructure.stack;
  * When popping, we take care to nullify the newly unused slot in the array to prevent a possible memory leak
  *         </pre>
  */
-public class BoundedArrayImpl implements Stack {
+public class BoundedArrayImpl<T> implements Stack<T>, Iterable<T> {
 
-    private Object[] stack;
+    private T[] stack;
     private int size = 0;
 
     public BoundedArrayImpl(int capacity) {
-        stack = new Object[capacity];
+        stack = (T[]) new Object[capacity];
     }
 
     /*
@@ -29,7 +32,7 @@ public class BoundedArrayImpl implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#push(java.lang.Object)
      */
     @Override
-    public void push(Object item) {
+    public void push(T item) {
         if (size == stack.length) {
             throw new IllegalStateException("Cannot add to full stack");
         }
@@ -42,11 +45,8 @@ public class BoundedArrayImpl implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#pop()
      */
     @Override
-    public Object pop() {
-        if (size == 0) {
-            throw new IllegalStateException("Cannot pop from empty stack");
-        }
-        Object popped = stack[size - 1];
+    public T pop() {
+        T popped = peek();
         stack[--size] = null;
         return popped;
     }
@@ -57,9 +57,9 @@ public class BoundedArrayImpl implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#peek()
      */
     @Override
-    public Object peek() {
+    public T peek() {
         if (size == 0) {
-            throw new IllegalStateException("Cannot peek from empty stack");
+            throw new NoSuchElementException("Cannot peek from empty stack");
         }
         return stack[size - 1];
     }
@@ -82,6 +82,28 @@ public class BoundedArrayImpl implements Stack {
     @Override
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+
+        return null;
+    }
+
+    public static void main(String[] args) {
+        BoundedArrayImpl<Integer> stack = new BoundedArrayImpl<>(15);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.pop();
+        stack.push(4);
+
+        BoundedArrayImpl<String> stringStack = new BoundedArrayImpl<>(15);
+        stringStack.push("1");
+        stringStack.push("2");
+        stringStack.push("3");
+        stringStack.pop();
+        stringStack.push("4");
     }
 
 }

@@ -7,13 +7,13 @@ package com.bhuwan.datastructure.stack;
  * @author bhuwan
  *
  */
-public interface Stack {
+public interface Stack<T> {
 
-    void push(Object item);
+    void push(T item);
 
-    Object pop();
+    T pop();
 
-    Object peek();
+    T peek();
 
     int size();
 

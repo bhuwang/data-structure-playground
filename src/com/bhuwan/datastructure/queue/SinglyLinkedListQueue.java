@@ -7,13 +7,13 @@ package com.bhuwan.datastructure.queue;
  * @author bhuwan
  *
  */
-public class SinglyLinkedListQueue implements Queue {
+public class SinglyLinkedListQueue<T> implements Queue<T> {
 
     private class Node {
-        public Object item;
+        public T item;
         public Node next;
 
-        public Node(Object item, Node next) {
+        public Node(T item, Node next) {
             this.item = item;
             this.next = next;
         }
@@ -28,7 +28,7 @@ public class SinglyLinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#enqueue(java.lang.Object)
      */
     @Override
-    public void enqueue(Object item) {
+    public void enqueue(T item) {
         Node newNode = new Node(item, null);
         if (isEmpty()) {
             head = newNode;
@@ -44,8 +44,8 @@ public class SinglyLinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#dequeue()
      */
     @Override
-    public Object dequeue() {
-        Object dequeuedItem = peek();
+    public T dequeue() {
+        T dequeuedItem = peek();
         if (head == tail) {
             tail = null;
         }
@@ -59,7 +59,7 @@ public class SinglyLinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#peek()
      */
     @Override
-    public Object peek() {
+    public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("Cannot dequeue from empty queue");
         }
@@ -91,7 +91,7 @@ public class SinglyLinkedListQueue implements Queue {
     }
 
     public static void main(String[] args) {
-        SinglyLinkedListQueue queue = new SinglyLinkedListQueue();
+        SinglyLinkedListQueue<String> queue = new SinglyLinkedListQueue<>();
         queue.enqueue("Bhuwan");
         queue.enqueue("Prisha");
         queue.enqueue("Pratiksha");

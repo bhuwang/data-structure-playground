@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
  *
  *         An implementation of the stack interface using singly-linked nodes.
  */
-public class SinglyLinkedStack implements Stack {
+public class SinglyLinkedStack<T> implements Stack<T> {
 
     public static void main(String[] args) {
-        SinglyLinkedStack stack = new SinglyLinkedStack();
+        SinglyLinkedStack<String> stack = new SinglyLinkedStack<>();
         stack.push("Bhuwan");
         stack.push("Pratiksha");
         stack.push("Prisha");
@@ -22,10 +22,10 @@ public class SinglyLinkedStack implements Stack {
     }
 
     private class Node {
-        public Object data;
+        public T data;
         public Node next;
 
-        public Node(Object data, Node next) {
+        public Node(T data, Node next) {
             this.data = data;
             this.next = next;
         }
@@ -39,7 +39,7 @@ public class SinglyLinkedStack implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#push(java.lang.Object)
      */
     @Override
-    public void push(Object item) {
+    public void push(T item) {
         top = new Node(item, top);
     }
 
@@ -49,8 +49,8 @@ public class SinglyLinkedStack implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#pop()
      */
     @Override
-    public Object pop() {
-        Object item = peek();
+    public T pop() {
+        T item = peek();
         top = top.next;
         return item;
     }
@@ -61,7 +61,7 @@ public class SinglyLinkedStack implements Stack {
      * @see com.bhuwan.datastructure.stack.Stack#peek()
      */
     @Override
-    public Object peek() {
+    public T peek() {
         if (top == null) {
             throw new NoSuchElementException();
         }

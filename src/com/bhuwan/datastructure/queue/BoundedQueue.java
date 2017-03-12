@@ -1,18 +1,18 @@
 package com.bhuwan.datastructure.queue;
 
-public class BoundedQueue implements Queue {
+public class BoundedQueue<T> implements Queue<T> {
 
-    private Object[] queue = null;
+    private T[] queue = null;
     private int size = 0;
     private int head = 0;
     private int tail = 0;
 
     public BoundedQueue(int capacity) {
-        queue = new Object[capacity];
+        queue = (T[]) new Object[capacity];
     }
 
     @Override
-    public void enqueue(Object item) {
+    public void enqueue(T item) {
         if (size == queue.length) {
             throw new IllegalStateException("Cannot add to full stack");
         }
@@ -21,8 +21,8 @@ public class BoundedQueue implements Queue {
     }
 
     @Override
-    public Object dequeue() {
-        Object firstItem = peek();
+    public T dequeue() {
+        T firstItem = peek();
         queue[head] = null;
         head++;
         size--;
@@ -30,7 +30,7 @@ public class BoundedQueue implements Queue {
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("Cannot pop from empty stack");
         }
@@ -48,7 +48,7 @@ public class BoundedQueue implements Queue {
     }
 
     public static void main(String[] args) {
-        BoundedQueue queue = new BoundedQueue(5);
+        BoundedQueue<String> queue = new BoundedQueue<>(5);
         queue.enqueue("Bhuwan");
         queue.enqueue("Prisha");
         queue.enqueue("Pratiksha");

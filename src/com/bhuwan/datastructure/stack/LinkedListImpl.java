@@ -9,11 +9,12 @@ import java.util.LinkedList;
  * @author bhuwan
  *
  */
-public class LinkedListImpl implements Stack {
+public class LinkedListImpl<T> implements Stack<T> {
 
     /**
      * <pre>
-     * A stack class implemented as a wrapper around a java.util.LinkedList. All stack methods simply delegate to LinkedList methods.
+     * A stack class implemented as a wrapper around a java.util.LinkedList. 
+     * All stack methods simply delegate to LinkedList methods.
      * 
      * "The stack wraps the list"
      * "The list is being adapted to use in a stack context"
@@ -21,20 +22,20 @@ public class LinkedListImpl implements Stack {
      * "The list interface is being narrowed to that of a stack"
      * </pre>
      */
-    LinkedList<Object> list = new LinkedList<>();
+    LinkedList<T> list = new LinkedList<>();
 
     @Override
-    public void push(Object item) {
+    public void push(T item) {
         list.addFirst(item);
     }
 
     @Override
-    public Object pop() {
+    public T pop() {
         return list.removeFirst();
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         return list.getFirst();
     }
 

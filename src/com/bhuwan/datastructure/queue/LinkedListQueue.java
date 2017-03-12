@@ -9,9 +9,9 @@ import java.util.LinkedList;
  * @author bhuwan
  *
  */
-public class LinkedListQueue implements Queue {
+public class LinkedListQueue<T> implements Queue<T> {
 
-    LinkedList<Object> list = new LinkedList<>();
+    LinkedList<T> list = new LinkedList<>();
 
     /*
      * (non-Javadoc)
@@ -19,7 +19,7 @@ public class LinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#enqueue(java.lang.Object)
      */
     @Override
-    public void enqueue(Object item) {
+    public void enqueue(T item) {
         list.addLast(item);
     }
 
@@ -29,7 +29,7 @@ public class LinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#dequeue()
      */
     @Override
-    public Object dequeue() {
+    public T dequeue() {
         return list.removeFirst();
     }
 
@@ -39,7 +39,7 @@ public class LinkedListQueue implements Queue {
      * @see com.bhuwan.datastructure.queue.Queue#peek()
      */
     @Override
-    public Object peek() {
+    public T peek() {
         return list.getFirst();
     }
 
