@@ -9,7 +9,8 @@ import java.util.NoSuchElementException;
 /**
  * @author bhuwan
  *
- *         An implementation of the stack interface using singly-linked nodes.
+ *         An implementation of the stack interface using singly-linked nodes. Though Iterator is not the stack operation I am only
+ *         demonstrating the example here.
  */
 public class SinglyLinkedStack<T> implements Stack<T>, Iterable<T> {
 
@@ -107,6 +108,11 @@ public class SinglyLinkedStack<T> implements Stack<T>, Iterable<T> {
         @Override
         public boolean hasNext() {
             return current != null;
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
         }
 
         @Override
