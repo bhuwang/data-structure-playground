@@ -6,6 +6,11 @@ package com.bhuwan.datastructure.sorting.selection;
 import com.bhuwan.datastructure.sorting.SortUtils;
 
 /**
+ * <pre>
+ * Selection sort always compares to its right to find the minimum even if the array is 
+ * already sorted.
+ * </pre>
+ * 
  * @author bhuwan
  *
  */

@@ -19,6 +19,12 @@ public class SortUtils {
         a[j] = swap;
     }
 
+    public static void exch(Object[] a, int i, int j) {
+        Object swap = a[i];
+        a[i] = a[j];
+        a[j] = swap;
+    }
+
     public static boolean isArraySorted(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
             if (SortUtils.less(a[i], a[i - 1])) {
