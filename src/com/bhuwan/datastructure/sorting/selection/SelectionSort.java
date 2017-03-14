@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.bhuwan.datastructure.sorting;
+package com.bhuwan.datastructure.sorting.selection;
+
+import com.bhuwan.datastructure.sorting.SortUtils;
 
 /**
  * @author bhuwan

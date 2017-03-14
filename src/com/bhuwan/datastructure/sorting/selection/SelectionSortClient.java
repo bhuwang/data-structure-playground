@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bhuwan.datastructure.sorting;
+package com.bhuwan.datastructure.sorting.selection;
 
 import java.util.Arrays;
 
