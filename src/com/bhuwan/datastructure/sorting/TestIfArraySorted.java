@@ -22,6 +22,9 @@ public class TestIfArraySorted {
         System.out.println("Sorted?: [2,3,8,7,9]: " + SortUtils.isArraySorted(new Comparable[] { 2, 3, 8, 7, 9 }));
 
         System.out.println("Sorted?: [12,13,18,7,19]: " + SortUtils.isArraySorted(new Comparable[] { 12, 13, 18, 7, 19 }));
+
+        System.out.println("Sorted?: { 12, 13, 14, 16, 19, 22, 2, 8, 62 }: "
+                + SortUtils.isArraySorted(new Comparable[] { 12, 13, 14, 16, 19, 22, 2, 8, 62 }, 0, 5));
     }
 
 }

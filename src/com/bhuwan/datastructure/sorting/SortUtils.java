@@ -33,4 +33,13 @@ public class SortUtils {
         }
         return true;
     }
+
+    public static boolean isArraySorted(Comparable[] a, int fromIndex, int toIndex) {
+        for (int i = fromIndex + 1; i < toIndex; i++) {
+            if (SortUtils.less(a[i], a[i - 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
