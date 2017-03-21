@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bhuwan.datastructure.sorting.merge;
+package com.bhuwan.datastructure.sorting.mergesort;
 
 import com.bhuwan.datastructure.sorting.SortUtils;
 
